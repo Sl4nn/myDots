@@ -1,0 +1,209 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #282828
+foreground = #EBDBB2
+empty = #3C3836
+active = #458588
+urgent = #CC241D
+occupied = #689D6A
+
+[bar/mybar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 98%
+height = 30
+offset-x = 1%
+offset-y = 0.5%
+radius = 10.0
+fixed-center = true
+enable-ipc = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 2
+line-color = #f00
+border-size = 4
+; border-color = #000000
+padding-left = 2
+padding-right = 4
+module-margin-left = 2
+module-margin-right = 2
+font-0 = FantasqueSansMono Nerd Font:style=Regular:size=14;4
+wm-restack = bspwm
+override-redirect = false
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/monitor1]
+inherit = bar/mybar
+monitor = eDP-1
+bottom = false
+modules-left = workspaces
+modules-center = date
+modules-right = arch-aur-updates pulseaudio wlan battery powermenu
+
+[bar/monitor2]
+inherit =bar/mybar
+monitor = HDMI-2
+bottom = false
+modules-left = workspaces
+modules-center = date
+modules-right = pulseaudio wlan battery
+
+;; MODULES ;;
+[module/arch-aur-updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/check-all-updates.sh
+interval = 60
+label = %output%
+label-forground = ${colors.urgent}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+format-padding = 1
+
+icon-default = 
+
+format = <label-state>
+format-background = ${colors.background}
+label-active = 
+label-occupied = 
+label-urgent = 
+label-empty = 
+
+label-empty-padding = 1
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+
+label-empty-foreground = ${colors.empty}
+label-active-foreground = ${colors.active}
+label-urgent-foreground = ${colors.urgent}
+label-occupied-foreground = ${colors.occupied}
+
+[module/wlan]
+type = internal/network
+interface = wlp61s0
+interval = 3.0
+
+format-connected = <ramp-signal>
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 睊
+ramp-signal-1 = 直
+ramp-signal-2 = 直
+ramp-signal-3 = 直
+ramp-signal-4 = 直
+ramp-signal-foreground = ${colors.foreground}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %d.%m.%y"
+
+time = %H:%M
+time-alt = %H:%M
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground}
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 婢 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 97
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <animation-discharging> <label-discharging>
+
+format-full-prefix = "  "
+format-full-prefix-foreground = ${colors.foreground}
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+animation-discharging-0 = "  "
+animation-discharging-1 = "  "
+animation-discharging-2 = "  "
+animation-discharging-3 = "  "
+animation-discharging-4 = "  "
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

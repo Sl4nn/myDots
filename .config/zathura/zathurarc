@@ -1,0 +1,15 @@
+/*General settings*/
+set selection-clipboard primary
+set guioptions " "
+set adjust-open width
+
+/*Colour theming*/
+set index-bg "#282828"
+set index-fg "#EBDBB2"
+set index-active-bg "#458588"
+set index-active-fg "#DDDDCD"
+
+set recolor = true
+set recolor-darkcolor "#EBDBB2"
+set recolor-lightcolor "#282828"
+

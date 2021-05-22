@@ -1,0 +1,7 @@
+configuration {
+combi-modi: [window,drun,run,ssh];
+width: 20;
+lines: 5;
+monitor: "-1";
+}
+@theme "my_theme"
