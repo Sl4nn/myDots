@@ -1,5 +1,5 @@
 configuration {
-combi-modi: [window,drun,run,ssh];
+combi-modi: [drun];
 width: 20;
 lines: 5;
 monitor: "-1";

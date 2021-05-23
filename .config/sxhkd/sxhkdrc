@@ -2,8 +2,8 @@
 # WM INDEPENDENT HOTKEYS
 
 # launches browser, editor or mail client
-super + shift + {w, e, m, t, d}
-    {firefox, emacsclient -c -a 'emacs', thunderbird, telegram-desktop, discord-canary --no-sandbox}
+super + shift + {w, e, m, t, d, p}
+    {firefox, emacsclient -c -a 'emacs', thunderbird, telegram-desktop, discord --no-sandbox, rofi-pass}
 
 super + shift + Return
     kitty -e ranger
@@ -42,6 +42,9 @@ XF86MonBrightnessUp
 # brightness down
 XF86MonBrightnessDown
     brightnessctl set 10-
+
+Print
+    maim -us ~/Pictures/$(date +%s).png
 
 #################
 # BSPWM HOTKEYS #

@@ -7,6 +7,9 @@ fi
 #   source /usr/share/zsh/manjaro-zsh-prompt
 # fi
 
+export VISUAL=nvim
+export EDITOR=$VISUAL
+
 # Custom aliases
 ## Git
 alias config="/usr/bin/git --git-dir=$HOME/Git/myDots/ --work-tree=$HOME"
@@ -30,4 +33,3 @@ alias la="lsd -la"
 alias update="sudo pacman -Syyu"
 
 eval "$(starship init zsh)"
-pfetch
