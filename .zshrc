@@ -9,6 +9,7 @@ fi
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
+export TERMINAL=kitty
 
 # Custom aliases
 ## Git

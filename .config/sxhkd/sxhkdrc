@@ -6,11 +6,11 @@ super + shift + {w, e, m, t, d, p}
     {firefox, emacsclient -c -a 'emacs', thunderbird, telegram-desktop, discord --no-sandbox, rofi-pass}
 
 super + shift + Return
-    kitty -e ranger
+    alacritty -e ranger
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 super + @space
