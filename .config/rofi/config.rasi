@@ -1,5 +1,5 @@
 configuration {
-combi-modi: [drun];
+combi-modi: [drun, run];
 width: 20;
 lines: 5;
 monitor: "-1";

@@ -2,17 +2,13 @@
 
 # Autostart applications
 pgrep -x sxhkd > /dev/null || sxhkd & #launches sxhkd
-picom & #launches compositor
 nitrogen --restore & #sets wallpaper
-emacs --daemon & #launches emacs daemon
 dunst & #launches notification daemon
-
-# Monitor setup
-~/.config/bspwm/scripts/monitors.sh &
 ~/.config/polybar/launch.sh & #launches polybar
 
-bspc monitor eDP-1 -d 1 2 3 4 5
-bspc monitor HDMI-2 -d 6 7 8 9 0
+# Monitor & compositor settings
+~/.config/bspwm/scripts/monitor-setup.sh
+picom & #launches compositor
 
 # Window configuration
 bspc config border_width         3
@@ -20,7 +16,7 @@ bspc config window_gap           5
 bspc config remove_disabled_monitors true #should remove disabled monitors
 bspc config remove_unplugged_monitors true #should remove unplugged monitors
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.6
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
