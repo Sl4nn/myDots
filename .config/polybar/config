@@ -48,11 +48,11 @@ monitor = ${env:MONITOR:}
 bottom = false
 modules-left = workspaces
 modules-center = date
-modules-right = arch-aur-updates pulseaudio wlan battery powermenu
+modules-right = arch-aur-updates pulseaudio wlan battery 
 tray-position = right
 
 [bar/ext]
-inherit =bar/mybar
+inherit = bar/mybar
 monitor = ${env:MONITOR:}
 bottom = false
 modules-left = workspaces
