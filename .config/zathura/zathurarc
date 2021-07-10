@@ -1,10 +1,7 @@
-/*General settings*/
 set selection-clipboard primary
 set guioptions " "
 set adjust-open width
-set smooth-scroll true
 
-/*Colour theming*/
 set index-bg "#282828"
 set index-fg "#EBDBB2"
 set index-active-bg "#458588"

@@ -2,8 +2,8 @@
 # WM INDEPENDENT HOTKEYS
 
 # launches browser, editor or mail client
-super + shift + {w, e, m, t, d, p}
-    {firefox, emacsclient -c -a 'emacs', thunderbird, telegram-desktop, discord --no-sandbox, rofi-pass}
+super + shift + {w, m, d, p}
+    {brave, thunderbird, discord --no-sandbox, rofi-pass}
 
 super + shift + Return
     alacritty -e ranger

@@ -7,9 +7,11 @@ fi
 #   source /usr/share/zsh/manjaro-zsh-prompt
 # fi
 
-export VISUAL=nvim
-export EDITOR=$VISUAL
-export TERMINAL=alacritty
+export VISUAL="nvim"
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export MANPAGER="nvim -c 'set ft=man' -"
+export BROWSER="brave"
 
 # Custom aliases
 ## Git

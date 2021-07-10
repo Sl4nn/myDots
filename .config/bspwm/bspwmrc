@@ -28,9 +28,9 @@ bspc config presel_feedback_color  "#458588"
 bspc config urgent_border_color    "#CC241D"
 
 # Window and workspace rules
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-bspc rule -a Emacs state=tiled
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+#bspc rule -a Emacs state=tiled
 bspc rule -a Zathura state=tiled
 bspc rule -a zoom state=floating
